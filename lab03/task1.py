@@ -1,18 +1,11 @@
-def OR(x1, x2):
-  if x1 >= 1 or x2 >= 1:
-   return 1
-  else:
-   return 0
-def AND(x1, x2):
-  if x1 == 1 and x2 == 1:
-   return 1
-  else:
-   return 0
-def XOR(x1, x2):
- if AND(x1, x2) != OR(x1, x2):
-  return 1
- else:
-  return 0
+def xor(x1, x2):
+    #XOR через OR та AND
+    or_result = x1 or x2
+    and_result = x1 and x2
+    xor_result = or_result and not and_result
+    return int(xor_result)
 
-print(f'OR(1,1) = {OR(1, 1)} OR(0,1) = {OR(0, 1)} OR(0,0) = {OR(0, 0)}')
-print(f'AND(0,0) = {AND(0, 0)} AND(1,0) = {AND(1, 0)} AND(1,1) = {AND(1, 1)}')
+print("xor(0, 0) =", xor(0, 0))  #0
+print("xor(0, 1) =", xor(0, 1))  #1
+print("xor(1, 0) =", xor(1, 0))  #1
+print("xor(1, 1) =", xor(1, 1))  #0
